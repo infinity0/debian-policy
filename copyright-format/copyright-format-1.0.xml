@@ -496,9 +496,7 @@ License: MPL-1.1
       <para>
         The full text of any component license may be omitted from
         this field, in which case the file <emphasis>must</emphasis> include a
-        stand-alone License paragraph that does contain the full text for it, or its
-        full text may be substituted by a pointer to the license file under
-        <filename>/usr/share/common-licenses</filename>.
+        stand-alone License paragraph that does contain the full text for it.
       </para>
       <para>
         Stand-alone License paragraphs: this field gives the licensing terms for
@@ -515,6 +513,12 @@ License: MPL-1.1
         published licenses, e.g. GPL-2 rather than GPL-2+, since this allows
         maximum re-use. This is currently not enforced, but may be in a later
         version of this specification.
+      </para>
+      <para>
+        In any paragraph, whenever this field contains full text for a license
+        or license component, this can instead be replaced with a pointer to
+        the license file under <filename>/usr/share/common-licenses</filename>,
+        or within the debian source package itself.
       </para>
     </section>
 
