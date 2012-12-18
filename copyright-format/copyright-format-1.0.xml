@@ -473,37 +473,48 @@ License: MPL-1.1
     <section id="license-field">
       <title><varname>License</varname></title>
       <para>
-        Formatted text, with synopsis.  In the header paragraph, this field
-        gives the license information for the package as a whole, which may
-        be different or simplified from a combination of all the per-file
-        license information.  In a Files paragraph, this field gives the
-        licensing terms for the files listed in the <varname>Files</varname>
-        field for this paragraph.  In a stand-alone License paragraph, it
-        gives the licensing terms for those paragraphs which reference it.
-      </para>
-      <para>
-        First line: an abbreviated name for the license, or expression
-        giving alternatives (see the <link linkend="license-short-name">Short
-        name</link> section for a list of standard abbreviations).  If
+        Formatted text, with synopsis in the form of a <link linkend="license-syntax">license expression</link>. If
         there are licenses present in the package without a standard short
         name, an arbitrary short name may be assigned for these licenses.
         These arbitrary names are only guaranteed to be unique within a
         single copyright file.
       </para>
       <para>
-        If there are no remaining lines, then all of the short names
-        or short names followed by license exceptions making up the
-        first line must be described in <link
-        linkend="stand-alone-license-paragraph">stand-alone License
-        paragraphs</link>.  Otherwise, this field should either
-        include the full text of the license(s) or include a pointer to the
-        license file under <filename>/usr/share/common-licenses</filename>.
+        Header or Files paragraphs: In the header paragraph, this field
+        gives the license information for the package as a whole, which may
+        be different or simplified from a combination of all the per-file
+        license information.  In a Files paragraph, this field gives the
+        licensing terms for the files listed in the <varname>Files</varname>
+        field for this paragraph. In either case,
         This field should include all text needed in order to fulfill both
         Debian Policy's requirement for including a copy of the software's
         distribution license (<ulink
         url="http://www.debian.org/doc/debian-policy/ch-docs#s-copyrightfile">12.5</ulink>),
         and any license requirements to include warranty disclaimers or
         other notices with the binary package.
+      </para>
+      <para>
+        The full text of any component license may be omitted from
+        this field, in which case the file <emphasis>must</emphasis> include a
+        stand-alone License paragraph that does contain the full text for it, or its
+        full text may be substituted by a pointer to the license file under
+        <filename>/usr/share/common-licenses</filename>.
+      </para>
+      <para>
+        Stand-alone License paragraphs: this field gives the licensing terms for
+        those paragraphs which reference it. These terms must be semantically
+        software- and author- independent. (Information that is software- or
+        author-specific belongs to the header or a Files paragraph, in the
+        License and/or Comment fields. For example, the MPL-1.1 requirement to
+        state the initial developers of the software, or any copyright headers
+        that explicitly mention authorship.)
+      </para>
+      <para>
+        It is recommended that stand-alone License paragraphs only reference
+        irreducible <link linkend="license-short-name">short names</link> of
+        published licenses, e.g. GPL-2 rather than GPL-2+, since this allows
+        maximum re-use. This is currently not enforced, but may be in a later
+        version of this specification.
       </para>
     </section>
 
