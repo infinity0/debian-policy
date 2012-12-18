@@ -658,10 +658,12 @@ Copyright 2009, 2010 Angela Watts</programlisting>
         License names are case-insensitive, and may not contain spaces.
       </para>
       <para>
-        In case of multi-licensing, the license short names are separated by
+        In case of multi-licensing, the license <link linkend="license-short-name">short names</link> are separated by
         <literal>or</literal> when the user can chose between different
         licenses, and by <literal>and</literal> when use of the work must
-        simultaneously comply with the terms of multiple licenses.
+        simultaneously comply with the terms of multiple licenses. When the license
+        grant permits using the terms of any later version of that
+        license, add a plus sign to the end of the short name.
       </para>
       <para>
         For instance, this is a simple, <quote>GPL version 2 or later</quote>
@@ -687,6 +689,29 @@ Copyright 2009, 2010 Angela Watts</programlisting>
       <para>
         This is for a file that has Perl code and classic BSD code in it:
 <programlisting>License: GPL-2+ or Artistic-2.0, and BSD-3-clause</programlisting>
+      </para>
+      <para>
+        An exception or clarification to a license is signalled in plain text,
+        by appending <literal>with
+        <varname><replaceable>keywords</replaceable></varname>
+        exception</literal> to the short name.  This document provides a <link linkend="license-exception-name">list
+        of keywords</link> that must be used when referring to the most frequent
+        exceptions.  When exceptions other than these are in effect that
+        modify a common license by granting additional permissions, you may
+        use an arbitrary keyword not taken from the below list of keywords.
+        When a license differs from a common license because of added
+        restrictions rather than because of added permissions, a distinct
+        short name should be used instead of <literal>with
+        <varname><replaceable>keywords</replaceable></varname>
+        exception</literal>.
+      </para>
+      <para>
+        Only one exception may be specified for each license within a given
+        license specification.  If more than one exception applies to a single
+        license, an arbitrary short name indicating that combination of
+        multiple exceptions must be used instead.
+      </para>
+      <para>
         A <literal>GPL-2+</literal> work with the <literal>OpenSSL</literal>
         exception is in effect a dual-licensed work that can be redistributed
         either under the <literal>GPL-2+</literal>, or under the
@@ -727,7 +752,7 @@ Copyright 2009, 2010 Angela Watts</programlisting>
  On Debian systems, the full text of the GNU General Public
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2'.</programlisting>
-       </para>
+      </para>
      </section>
 
     <section id="license-short-name">
@@ -768,14 +793,10 @@ Copyright 2009, 2010 Angela Watts</programlisting>
         For licenses that have multiple versions in use, the short name is
         formed from the general short name of the license family, followed
         by a dash and the version number.  If the version number is
-        omitted, the lowest version number is implied.  When the license
-        grant permits using the terms of any later version of that
-        license, add a plus sign to the end of the short name.  For
+        omitted, the lowest version number is implied.  For
         example, the short name <literal>GPL</literal> refers to the GPL
         version 1 and is equivalent to <literal>GPL-1</literal>, although
-        the latter is clearer and therefore preferred.  If the package may
-        be distributed under the GPL version 1 or any later version, use a
-        short name of <literal>GPL-1+</literal>.
+        the latter is clearer and therefore preferred.
       </para>
       <para>
         For <link linkend="spdx">SPDX</link> compatibility, versions with
@@ -1122,27 +1143,8 @@ Copyright 2009, 2010 Angela Watts</programlisting>
         versions of the MIT license</ulink>. Please use Expat instead, when it
         matches.
       </para>
-      <para>
-        An exception or clarification to a license is signalled in plain text,
-        by appending <literal>with
-        <varname><replaceable>keywords</replaceable></varname>
-        exception</literal> to the short name.  This document provides a list
-        of keywords that must be used when referring to the most frequent
-        exceptions.  When exceptions other than these are in effect that
-        modify a common license by granting additional permissions, you may
-        use an arbitrary keyword not taken from the below list of keywords.
-        When a license differs from a common license because of added
-        restrictions rather than because of added permissions, a distinct
-        short name should be used instead of <literal>with
-        <varname><replaceable>keywords</replaceable></varname>
-        exception</literal>.
-      </para>
-      <para>
-        Only one exception may be specified for each license within a given
-        license specification.  If more than one exception applies to a single
-        license, an arbitrary short name indicating that combination of
-        multiple exceptions must be used instead.
-      </para>
+    <section id="license-exception-name">
+      <title>Exception names</title>
       <para>
         The GPL <literal>Font</literal> exception refers to the text added to
         the license notice of each file as specified at <ulink
@@ -1184,6 +1186,7 @@ so, delete this exception statement from your version. If you delete
 this exception statement from all source files in the program, then
 also delete it here.</programlisting>
         </para>
+        </section>
 
         <section id="public-domain">
           <title>Public domain</title>
