@@ -712,13 +712,9 @@ Copyright 2009, 2010 Angela Watts</programlisting>
         multiple exceptions must be used instead.
       </para>
       <para>
-        A <literal>GPL-2+</literal> work with the <literal>OpenSSL</literal>
-        exception is in effect a dual-licensed work that can be redistributed
-        either under the <literal>GPL-2+</literal>, or under the
-        <literal>GPL-2+</literal> with the <literal>OpenSSL</literal>
-        exception.  It is thus expressed as <literal>GPL-2+ with OpenSSL
-        exception</literal>.  A possible <varname>License</varname> field for
-        such a license is:
+        This is a possible <varname>License</varname> field for a
+        <literal>GPL-2+</literal> work with the <literal>OpenSSL</literal>
+        exception:
 <programlisting>License: GPL-2+ with OpenSSL exception
  This program is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
