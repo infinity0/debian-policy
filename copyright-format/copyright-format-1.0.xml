@@ -652,6 +652,84 @@ Copyright 2009, 2010 Angela Watts</programlisting>
   <section id="license-specification">
     <title>License specification</title>
 
+    <section id="license-syntax">
+      <title>Syntax</title>
+      <para>
+        License names are case-insensitive, and may not contain spaces.
+      </para>
+      <para>
+        In case of multi-licensing, the license short names are separated by
+        <literal>or</literal> when the user can chose between different
+        licenses, and by <literal>and</literal> when use of the work must
+        simultaneously comply with the terms of multiple licenses.
+      </para>
+      <para>
+        For instance, this is a simple, <quote>GPL version 2 or later</quote>
+        field:
+<programlisting>License: GPL-2+</programlisting>
+        This is a dual-licensed GPL/Artistic work such as Perl:
+<programlisting>License: GPL-1+ or Artistic</programlisting>
+        This is for a file that has both GPL and classic BSD code in it:
+<programlisting>License: GPL-2+ and BSD-3-clause</programlisting>
+        For the most complex cases, a comma is used to disambiguate the
+        priority of <literal>or</literal>s and <literal>and</literal>s.
+        The conjunction <quote><literal>and</literal></quote> has priority over
+        <quote><literal>or</literal></quote> unless preceded by a comma. For
+        instance:
+      </para>
+      <simpara>
+        <literal>A or B and C</literal> means <literal>A or (B and C)</literal>.
+      </simpara>
+      <simpara>
+        <literal>A or B, and C</literal> means <literal>(A or B) and
+        C</literal>.
+      </simpara>
+      <para>
+        This is for a file that has Perl code and classic BSD code in it:
+<programlisting>License: GPL-2+ or Artistic-2.0, and BSD-3-clause</programlisting>
+        A <literal>GPL-2+</literal> work with the <literal>OpenSSL</literal>
+        exception is in effect a dual-licensed work that can be redistributed
+        either under the <literal>GPL-2+</literal>, or under the
+        <literal>GPL-2+</literal> with the <literal>OpenSSL</literal>
+        exception.  It is thus expressed as <literal>GPL-2+ with OpenSSL
+        exception</literal>.  A possible <varname>License</varname> field for
+        such a license is:
+<programlisting>License: GPL-2+ with OpenSSL exception
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later
+ version.
+ .
+ In addition, as a special exception, the author of this
+ program gives permission to link the code of its
+ release with the OpenSSL project's "OpenSSL" library (or
+ with modified versions of it that use the same license as
+ the "OpenSSL" library), and distribute the linked
+ executables. You must obey the GNU General Public
+ License in all respects for all of the code used other
+ than "OpenSSL".  If you modify this file, you may extend
+ this exception to your version of the file, but you are
+ not obligated to do so.  If you do not wish to do so,
+ delete this exception statement from your version.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.</programlisting>
+       </para>
+     </section>
+
     <section id="license-short-name">
       <title>Short name</title>
       <para>
@@ -1135,84 +1213,6 @@ also delete it here.</programlisting>
         </para>
       </section>
     </section>
-
-    <section id="license-syntax">
-      <title>Syntax</title>
-      <para>
-        License names are case-insensitive, and may not contain spaces.
-      </para>
-      <para>
-        In case of multi-licensing, the license short names are separated by
-        <literal>or</literal> when the user can chose between different
-        licenses, and by <literal>and</literal> when use of the work must
-        simultaneously comply with the terms of multiple licenses.
-      </para>
-      <para>
-        For instance, this is a simple, <quote>GPL version 2 or later</quote>
-        field:
-<programlisting>License: GPL-2+</programlisting>
-        This is a dual-licensed GPL/Artistic work such as Perl:
-<programlisting>License: GPL-1+ or Artistic</programlisting>
-        This is for a file that has both GPL and classic BSD code in it:
-<programlisting>License: GPL-2+ and BSD-3-clause</programlisting>
-        For the most complex cases, a comma is used to disambiguate the
-        priority of <literal>or</literal>s and <literal>and</literal>s.
-        The conjunction <quote><literal>and</literal></quote> has priority over
-        <quote><literal>or</literal></quote> unless preceded by a comma. For
-        instance:
-      </para>
-      <simpara>
-        <literal>A or B and C</literal> means <literal>A or (B and C)</literal>.
-      </simpara>
-      <simpara>
-        <literal>A or B, and C</literal> means <literal>(A or B) and
-        C</literal>.
-      </simpara>
-      <para>
-        This is for a file that has Perl code and classic BSD code in it:
-<programlisting>License: GPL-2+ or Artistic-2.0, and BSD-3-clause</programlisting>
-        A <literal>GPL-2+</literal> work with the <literal>OpenSSL</literal>
-        exception is in effect a dual-licensed work that can be redistributed
-        either under the <literal>GPL-2+</literal>, or under the
-        <literal>GPL-2+</literal> with the <literal>OpenSSL</literal>
-        exception.  It is thus expressed as <literal>GPL-2+ with OpenSSL
-        exception</literal>.  A possible <varname>License</varname> field for
-        such a license is:
-<programlisting>License: GPL-2+ with OpenSSL exception
- This program is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later
- version.
- .
- In addition, as a special exception, the author of this
- program gives permission to link the code of its
- release with the OpenSSL project's "OpenSSL" library (or
- with modified versions of it that use the same license as
- the "OpenSSL" library), and distribute the linked
- executables. You must obey the GNU General Public
- License in all respects for all of the code used other
- than "OpenSSL".  If you modify this file, you may extend
- this exception to your version of the file, but you are
- not obligated to do so.  If you do not wish to do so,
- delete this exception statement from your version.
- .
- This program is distributed in the hope that it will be
- useful, but WITHOUT ANY WARRANTY; without even the implied
- warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.  See the GNU General Public License for more
- details.
- .
- You should have received a copy of the GNU General Public
- License along with this package; if not, write to the Free
- Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- Boston, MA  02110-1301 USA
- .
- On Debian systems, the full text of the GNU General Public
- License version 2 can be found in the file
- `/usr/share/common-licenses/GPL-2'.</programlisting>
-       </para>
-     </section>
 
     <section id="spdx">
       <title>SPDX</title>
